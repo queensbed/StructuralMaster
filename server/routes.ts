@@ -204,7 +204,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
       
       // Store results
       for (const result of results) {
-        await storage.createAnalysisResult(result);
+        await storage.createAnalysisResult({
+          projectId: result.projectId,
+          loadCombinationId: 1, // Default load combination
+          resultType: "displacement",
+          elementId: result.elementId,
+          maxValue: result.maxDisplacement,
+          minValue: 0,
+          utilizationRatio: result.utilizationRatio,
+          criticalLocation: 0.5,
+          resultsData: result.resultsData
+        });
       }
       
       res.json({ message: "Analysis completed", results });

@@ -73,7 +73,9 @@ export default function Dashboard() {
     await createProject({
       name: "New Project",
       description: "Untitled structural project",
-      units: "metric"
+      units: "metric",
+      analysisType: "static",
+      designCode: "AISC360"
     });
   };
 

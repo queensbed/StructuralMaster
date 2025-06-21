@@ -118,7 +118,12 @@ This is a web-based structural engineering analysis application that allows user
 
 ```
 Changelog:
-- June 21, 2025. Initial setup
+- June 21, 2025: Initial setup with database schema and React components
+- June 21, 2025: Integrated advanced FEM engine with professional finite element analysis
+- June 21, 2025: Added international design code checking (AISC 360, Eurocode 3, BS 5950)
+- June 21, 2025: Implemented professional tabbed interface (Professional, Analysis, Results)
+- June 21, 2025: Connected frontend to backend with full API integration
+- June 21, 2025: Verified structural analysis workflow with real engineering calculations
 ```
 
 ## User Preferences

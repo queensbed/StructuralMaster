@@ -145,6 +145,8 @@ export class MemStorage implements IStorage {
       name: project.name,
       description: project.description || null,
       units: project.units || "metric",
+      analysisType: project.analysisType || "static",
+      designCode: project.designCode || "AISC360",
       createdAt: new Date().toISOString(),
       modelData: project.modelData || null,
     };
