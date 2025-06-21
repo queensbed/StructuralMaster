@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+
+  /* Custom structural colors */
+  --structural-primary: hsl(207, 90%, 54%);
+  --structural-primary-50: hsl(207, 100%, 97%);
+  --structural-primary-100: hsl(207, 100%, 92%);
+  --structural-primary-500: hsl(207, 90%, 54%);
+  --structural-primary-600: hsl(207, 90%, 46%);
+  --structural-primary-700: hsl(207, 90%, 38%);
+  --structural-primary-900: hsl(207, 90%, 22%);
+  
+  --structural-neutral-50: hsl(0, 0%, 98%);
+  --structural-neutral-100: hsl(30, 17%, 95%);
+  --structural-neutral-200: hsl(30, 13%, 91%);
+  --structural-neutral-300: hsl(30, 12%, 87%);
+  --structural-neutral-400: hsl(30, 8%, 81%);
+  --structural-neutral-500: hsl(25, 5%, 37%);
+  --structural-neutral-600: hsl(25, 6%, 28%);
+  --structural-neutral-700: hsl(25, 7%, 19%);
+  --structural-neutral-900: hsl(24, 10%, 12%);
+  
+  --structural-success: hsl(120, 100%, 32%);
+  --structural-warning: hsl(39, 100%, 50%);
+  --structural-error: hsl(348, 83%, 55%);
+  --structural-accent: hsl(262, 52%, 47%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .sidebar-transition {
+    transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
+  }
+  
+  .canvas-grid {
+    background-image: radial-gradient(circle, hsl(var(--structural-neutral-300)) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  .property-input:focus {
+    box-shadow: 0 0 0 2px hsla(var(--structural-primary-500), 0.2);
+  }
+  
+  .toolbar-button:hover {
+    background-color: hsla(var(--structural-primary-500), 0.1);
+  }
+  
+  .loading-shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    animation: shimmer 1.5s infinite;
+  }
+  
+  .shadow-depth-4 {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.14), 0 1px 10px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.2);
+  }
+  
+  .shadow-depth-8 {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.14), 0 2px 16px rgba(0,0,0,0.12), 0 4px 4px rgba(0,0,0,0.2);
+  }
+  
+  .shadow-depth-16 {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.14), 0 4px 32px rgba(0,0,0,0.12), 0 8px 8px rgba(0,0,0,0.2);
+  }
+
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+}
